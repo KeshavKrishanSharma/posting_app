@@ -39,7 +39,14 @@ const Wrapper = styled.main`
 
   .posts_img > img {
     height: 260px;
-    min-width: 100%;
+    
+    overflow: hidden;
+  }
+  .imgimg{
+    width: 18rem;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 30px;
   }
 
   .hover_posts_img:hover > .posts-img {
@@ -131,15 +138,15 @@ const PostSection = ({ posts, handleDelete }) => {
 
         {posts?.map((item) => (
           <div data-aos="zoom-in-up" className="row box pb-4" key={item.id}>
-            <div className="col-md-5">
+            <div className="col-lg-4">
               <div className="hover_posts_img">
-                <div className="posts_img">
-                  <img src={item.imgUrl} alt={item.title} />
+                <div className="posts_img text-center">
+                  <img className="imgimg" src={item.imgUrl} alt={item.title} />
                   <div></div>
                 </div>
               </div>
             </div>
-            <div className="col-md-7">
+            <div className="col-lg-8 ">
               <div className="text-start">
                 <h6 className="category">{item.category}</h6>
                 <span className=" title py-2"> {item.title} </span>
